@@ -1,0 +1,18 @@
+font:
+  normal:
+    family: Envy Code R 
+    style: Regular
+
+  bold:
+    family: Hack Nerd Font Mono
+    style: Bold
+
+  italic:
+    family: Inconsolata Nerd Font
+    style: Italic
+
+  bold_italic:
+    family: SauceCodePro Nerd Font
+    style: Bold Italic
+
+  size: 16.0

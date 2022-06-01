@@ -1,0 +1,49 @@
+#!/usr/bin/env zsh
+
+# The following lines were added by compinstall
+zstyle :compinstall filename '$XDG_CONFIG_HOME/zsh/.zshrc'
+# keybindings set to vim
+bindkey -v
+# End of lines configured by zsh-newuser-install
+
+#-----------------------$
+# Load scripts
+#-----------------------$
+#----------------------------------------------------------------------------------------------------------@#
+fpath=($ZDOTDIR/plugins/zsh-completions/src $fpath )                         #  Completions
+autoload -Uz compinit; compinit
+_comp_options+=(globdots)
+source $ZDOTDIR/plugins/completion.zsh
+#----------------------------------------------------------------------------------------------------------@#
+fpath=($ZDOTDIR/plugins/Prompt $fpath )                                      # script defining prompt
+autoload -Uz prompt_purification_setup && prompt_purification_setup
+#----------------------------------------------------------------------------------------------------------@#
+#xrdb -merge -I$HOME $XDG_CONFIG_HOME/X11/Xresources                         # Xresources
+#----------------------------------------------------------------------------------------------------------@#
+fpath=($ZDOTDIR/Scripts $fpath )                                             # to run user installed scripts
+autoload -Uz Scripts; Scripts
+#----------------------------------------------------------------------------------------------------------@#
+fpath=($ZDOTDIR/plugins $fpath )                                             # reverse of cd
+autoload -Uz bd; bd
+
+
+#-----------------------$
+# Source files
+#-----------------------$
+source $ZDOTDIR/Aliases/aliases                                              # aliases
+source $ZDOTDIR/env/env                                                      # zsh env config
+source $ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  # Highlight for terminal
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+source /home/phlight/.config/broot/launcher/bash/br
+
+export MAKEFLAGS="-j5 -l4"                                                   # makeflag
+
+#source $XDG_CONFIG_HOME/lf/LF_ICONS                                          # lf icons 
+# lfcd 
+#LFCD="$XDG_CONFIG_HOME/lf/lfcd.sh"
+#if [ -f "$LFCD" ]; then
+#    source "$LFCD"
+#fi
+
+

@@ -1,0 +1,18 @@
+###########################
+# xbindkeys configuration #
+###########################
+#
+# Version: 1.8.6
+#
+
+# Rofi
+"~/.config/rofi/Scripts/rofi-bangs.sh"
+Control+Shift+Alt+r
+
+# Rofi
+"/usr/bin/rofi-pass"
+Control+Shift+Alt+h
+
+##################################
+# End of xbindkeys configuration #
+##################################

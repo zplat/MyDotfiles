@@ -1,0 +1,9 @@
+!st fonts
+
+st.font: Source Code Font:style=Regular:size=16
+
+
+xterm*faceName: Inconsolata-dz for Powerline dz
+xterm*faceSize: 18
+xterm*geometry: 50x37
+

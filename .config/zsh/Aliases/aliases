@@ -1,0 +1,47 @@
+#----------------------------------------------------------------------------------------------------------@
+                                                                                 # Doas 
+#alias sudo='doas'  								                             # sudo to doas
+#alias sudoedit='doas visudo'                                                    # edit sudoer
+#----------------------------------------------------------------------------------------------------------@
+                                                                                # File managers
+alias lf='lfrun'                                                                # lf-preview dir navigation
+alias lff='lfcd'
+alias n="N -HURd" 							                                   	# nnn
+alias ls="ls -lahsXA" 							                               	# ls
+#----------------------------------------------------------------------------------------------------------@
+                                                                                # Applications
+alias t='tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf'                             	# tmux
+alias v="nvim"                                                                  # nvim
+alias sxiv="$XDG_CONFIG_HOME/sxiv/sxiv.sh"                                      # sxiv - open dir/file script
+#----------------------------------------------------------------------------------------------------------@
+                                                                                # Dropbox
+alias drpx="dropbox-cli start"                                                  # dropbox-cli start
+alias drpxstop="dropbox-cli stop"                                               # dropbox-cli stop
+#----------------------------------------------------------------------------------------------------------@
+                                                                                # Neuron Zettelkasten
+alias nix="~/.nix-profile/bin/neuron"                                           # neuron nix
+alias ema="emanote run --port=8080"                                             # Emanote server
+#----------------------------------------------------------------------------------------------------------@
+                                                                                # Zettelkasten
+alias Default="$ZK_PATH/.zk/templates/Standard.md" 		                     	# zk default template 
+alias zn="$ZK_PATH/zk_script/znew.sh"                                           # Create zettel 
+alias zs="$ZK_PATH/zk_script/zsnip.sh"                                          # Edit or New zettel 
+#----------------------------------------------------------------------------------------------------------@
+                                                                                # Window Manager
+alias awesome="startx $XINITRC awesome" 			                            # startx awesome
+alias dwm="startx $XINITRC dwm"                               				    # startx dwm
+#----------------------------------------------------------------------------------------------------------@
+                                                                                # Web Tools
+alias b="buku"                                                                  # buku bookmarks
+#----------------------------------------------------------------------------------------------------------@
+                                                                                # OS Cmds
+alias shut='shutdown -h now'                                                    # shutdown
+#----------------------------------------------------------------------------------------------------------@
+                                                                                # Git
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME' 	    # alias to the dotfiles
+#----------------------------------------------------------------------------------------------------------@
+                                                                                # LSP
+alias luamake="/$HOME/.config/nvim/lua-language-server/3rd/luamake/luamake"     # nvim Lsp server
+#----------------------------------------------------------------------------------------------------------@
+                                                                                # mail
+alias mbsync="mbsync -c \"$XDG_CONFIG_HOME/isync/mbsyncrc\""                    # mbsyn
