@@ -3,6 +3,13 @@
 #---------------------------------@#
 
 #---------------------------------------------------------------------------------$
+export XKB_DEFAULT_LAYOUT="us"                             # Keyboard setup 
+export XKB_DEFAULT_VARIANT="intl"
+
+GTK_IM_MODULE=fcitx                                        # fcitx key layout 
+QT_IM_MODULE=fcitx
+XMODIFIERS=fcitx                                          
+#---------------------------------------------------------------------------------$
 export PATH="$PATH:$XDG_CONFIG_HOME/foot/foot.ini"	       # foot terminal
 #---------------------------------------------------------------------------------$
 export LYNX_CFG="$XDG_CONFIG_HOME/lynx/lynx.cfg"           # lynx
