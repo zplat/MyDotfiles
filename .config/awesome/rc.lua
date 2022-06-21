@@ -189,17 +189,17 @@ screen.connect_signal("property::geometry", set_wallpaper)
 
 
 -- {{{ Wallpapers config
-local wallpaper_dir = os.getenv("HOME") .. "/Dropbox/Pictures/Background/wallpaper/"
+local wallpaper_dir = os.getenv("HOME") .. "/Dropbox/Background/4K/"
 local wallpapers = {
-    wallpaper_dir .. "680683.png",
-    wallpaper_dir .. "anime-girl-watching-sunset-fence-4k-0s-3840x2160.jpg",
+    wallpaper_dir .. "Wallpaper (2).jpg",
+    wallpaper_dir .. "girl-walking-with-headphones-anime-digital-art-9q-3840x2160.jpg",
     wallpaper_dir .. "umbrella-rain-anime-girl-4k-rg-3840x2160.jpg",
-    wallpaper_dir .. "anime-girl-school-looking-upward-butterfly-4k-rf-3840x2160.jpg",
+    wallpaper_dir .. "anime-girl-sightseeing-sky-clouds-scenery-moon-4k-wallpaper-uhdpaper.com-279@0@g.jpg",
     wallpaper_dir .. "ruby-rose-anime-girl-ha-3840x2160.jpg",
-    wallpaper_dir .. "anime-girls-ready-for-school-nu-3840x2160.jpg",
-    wallpaper_dir .. "cropped-3840-2160-728706.png",
-    wallpaper_dir .. "anime-girl-pier-side-4k-st-3840x2160.jpg",
-    wallpaper_dir .. "castle-anime-girl-4k-l1-3840x2160.jpg"
+    wallpaper_dir .. "girl-rest-mood-tw-3840x2160.jpg",
+    wallpaper_dir .. "footbridge-walk-anime-girl-4k-i9-3840x2160.jpg",
+    wallpaper_dir .. "sci-fi-cyborg-digital-art-4k-wallpaper-uhdpaper.com-595@0@f.jpg",
+    wallpaper_dir .. "asuka-neon-genesis-2020-4k-ba-3840x2160.jpg"
 }
 -- }}}
 
