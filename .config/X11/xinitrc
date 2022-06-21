@@ -42,8 +42,8 @@ if [ -f $XDG_CONFIG_HOME/X11/xbindkeysrc ]; then
 	xbindkeys -f $XDG_CONFIG_HOME/X11/xbindkeysrc
 fi
 
-udiskie &
-dropbox-cli start &
+#udiskie &
+#dropbox-cli start &
 picom &
 
 export GTK_IM_MODULE=fcitx
