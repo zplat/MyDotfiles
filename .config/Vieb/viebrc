@@ -3,7 +3,7 @@ set commandhist=useronly
 set downloadpath=~/Downloads/
 set firefoxmode=always
 set timeoutlen=1000
-set vimcommand=lvim
+set vimcommand=nvim
 set windowtitle=simple
 set adblocker=update
 set devtoolsposition=split
@@ -15,17 +15,34 @@ set firefoxmode=always
 set guifontsize=16
 set mintabwidth=250
 set norestoretabs
+" Security settings
+set clearcookiesonquit=true
 set permissioncamera=ask
 set permissioncertificateerror=ask
 set permissiondisplaycapture=ask
 set permissionmediadevices=allow
 set permissionmicrophone=ask
-set permissionpersistentstorage=allow
+set permissiongeolocation=block
+set permissionmidi=block
+set permissionmidisysex=block
+set permissionnotifications=ask
+set permissionopenexternal=ask
+set permissionpersistentstorage=block
+set permissionpointerlock=block
+set permissionsallowed=
+set permissionsasked=
+set permissionsblocked=
+set permissionunknown=block
 set redirecttohttp
+
+" Screen layout
 set splitbelow
 set tabclosefocusright
 set tabreopenposition=previous
 
+" Spelling & language
+set spell
+set spelllang=en-gb
 
 " Search Engines
 set searchwords=
