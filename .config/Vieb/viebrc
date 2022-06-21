@@ -42,7 +42,7 @@ set tabreopenposition=previous
 
 " Spelling & language
 set spell
-set spelllang=en-gb
+set spelllang=en-GB
 
 " Search Engines
 set searchwords=
