@@ -12,6 +12,7 @@
 
 # Super+Shift+Return to start an instance of foot (https://codeberg.org/dnkl/foot)
 riverctl map normal Super+Shift Return spawn foot
+riverctl map normal Super+Control Return spawn "alacritty -o font.size=24"
 
 # Super+Q to close the focused view
 riverctl map normal Super Q close
@@ -71,12 +72,22 @@ riverctl map-pointer normal Super BTN_LEFT move-view
 # Super + Right Mouse Button to resize views
 riverctl map-pointer normal Super BTN_RIGHT resize-view
 
+#----------------------------------------------------------
+#Sticky windows
+all_tags=$(((1 << 32) - 1))
+sticky_tag=$((1 << 31))
+all_but_sticky_tag=$(( $all_tags ^ $sticky_tag ))
+riverctl map normal Super S toggle-view-tags $sticky_tag
+riverctl spawn-tagmask ${all_but_sticky_tag}
+#----------------------------------------------------------
+
 for i in $(seq 1 9)
 do
     tags=$((1 << ($i - 1)))
 
     # Super+[1-9] to focus tag [0-8]
-    riverctl map normal Super $i set-focused-tags $tags
+    #riverctl map normal Super $i set-focused-tags $tags
+    riverctl map normal Super $i set-focused-tags $(($sticky_tag + $tags))
 
     # Super+Shift+[1-9] to tag focused view with tag [0-8]
     riverctl map normal Super+Shift $i set-view-tags $tags
@@ -86,13 +97,31 @@ do
 
     # Super+Shift+Ctrl+[1-9] to toggle tag [0-8] of focused view
     riverctl map normal Super+Shift+Control $i toggle-view-tags $tags
+
+
+
 done
+
 
 # Super+0 to focus all tags
 # Super+Shift+0 to tag focused view with all tags
 all_tags=$(((1 << 32) - 1))
 riverctl map normal Super 0 set-focused-tags $all_tags
 riverctl map normal Super+Shift 0 set-view-tags $all_tags
+
+#----------------------------------------------------------
+# The scratchpad will live on an unused tag. Which tags are used depends on your
+# config, but rivers default uses the first 9 tags.
+scratch_tag=$((1 << 20 ))
+# Toggle the scratchpad with Super+P
+riverctl map normal Super P toggle-focused-tags ${scratch_tag}
+# Send windows to the scratchpad with Super+Shift+P
+riverctl map normal Super+Shift P set-view-tags ${scratch_tag}
+# Set spawn tagmask to ensure new windows don't have the scratchpad tag unless
+# explicitly set.
+all_but_scratch_tag=$(( ((1 << 32) - 1) ^ $scratch_tag ))
+riverctl spawn-tagmask ${all_but_scratch_tag}
+#----------------------------------------------------------
 
 # Super+Space to toggle float
 riverctl map normal Super Space toggle-float
@@ -140,9 +169,11 @@ do
 done
 
 # Set background and border color
-riverctl background-color 0x002b36
+#riverctl background-color 0x002b36
 riverctl border-color-focused 0x93a1a1
 riverctl border-color-unfocused 0x586e75
+riverctl spawn $HOME/.config/river/background.sh 
+
 
 # Set keyboard repeat rate
 riverctl set-repeat 50 300
@@ -153,6 +184,10 @@ riverctl float-filter-add title "popup title with spaces"
 
 # Set app-ids and titles of views which should use client side decorations
 riverctl csd-filter-add app-id "gedit"
+
+#Start the following programs on start up.
+udiskie &
+dropbox-cli start &
 
 # Set and exec into the default layout generator, rivertile.
 # River will send the process group of the init executable SIGTERM on exit.
