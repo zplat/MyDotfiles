@@ -186,8 +186,8 @@ riverctl float-filter-add title "popup title with spaces"
 riverctl csd-filter-add app-id "gedit"
 
 #Start the following programs on start up.
-udiskie &
-dropbox-cli start &
+#udiskie &
+#dropbox-cli start &
 
 # Set and exec into the default layout generator, rivertile.
 # River will send the process group of the init executable SIGTERM on exit.
