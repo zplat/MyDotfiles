@@ -36,10 +36,11 @@ source $ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  # H
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 source /home/phlight/.config/broot/launcher/bash/br
-
-export MAKEFLAGS="-j5 -l4"                                                   # makeflag
-
-#source $XDG_CONFIG_HOME/lf/LF_ICONS                                          # lf icons 
+CORES=${nproc}
+LOAD=$CORES/2
+JOBS=$LOAD+1
+export MAKEFLAGS="-j$JOBS -l$LOAD"                                           # makeflag
+#source $XDG_CONFIG_HOME/lf/LF_ICONS                                         # lf icons 
 # lfcd 
 #LFCD="$XDG_CONFIG_HOME/lf/lfcd.sh"
 #if [ -f "$LFCD" ]; then
