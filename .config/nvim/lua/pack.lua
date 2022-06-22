@@ -52,7 +52,7 @@ require 'paq' {
     -- Git support
     "lewis6991/gitsigns.nvim";
     -- vim surround
-    "machakann/vim-sandwich"
+    "machakann/vim-sandwich";
 }
 
 require('nvim-autopairs').setup({
