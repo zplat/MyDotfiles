@@ -51,6 +51,8 @@ require 'paq' {
      "numToStr/Comment.nvim";
     -- Git support
     "lewis6991/gitsigns.nvim";
+    -- vim surround
+    "machakann/vim-sandwich"
 }
 
 require('nvim-autopairs').setup({
