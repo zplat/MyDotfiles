@@ -39,6 +39,7 @@ alias shut='shutdown -h now'                                                    
 #----------------------------------------------------------------------------------------------------------@
                                                                                 # Git
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME' 	    # alias to the dotfiles
+alias config='/usr/bin/git --git-dir=$HOME/.secfiles/ --work-tree=$HOME' 	    # alias to private dotfiles
 #----------------------------------------------------------------------------------------------------------@
                                                                                 # LSP
 alias luamake="/$HOME/.config/nvim/lua-language-server/3rd/luamake/luamake"     # nvim Lsp server
