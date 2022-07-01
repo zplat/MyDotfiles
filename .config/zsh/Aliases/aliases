@@ -1,16 +1,13 @@
 #----------------------------------------------------------------------------------------------------------@
 #                                                                               File managers
 
-alias lf='lfrun'                                                                # lf-preview dir navigation
-alias lff='lfcd'
-alias n="N -HURd" 							                                   	            # nnn
 alias ls="ls -lahsXA" 							                               	            # ls
 #----------------------------------------------------------------------------------------------------------@
 #                                                                               Applications
 
 alias t='tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf'                             	# tmux
 alias v="nvim"                                                                  # nvim
-alias sxiv="$XDG_CONFIG_HOME/sxiv/sxiv.sh"                                      # sxiv - open dir/file script
+alias sx="$XDG_CONFIG_HOME/sxiv/sxiv.sh"                                        # sxiv - open dir/file script
 #----------------------------------------------------------------------------------------------------------@
 #                                                                               Dropbox
 
