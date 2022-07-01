@@ -3,76 +3,99 @@
 #---------------------------------@#
 
 #---------------------------------------------------------------------------------$
-export XKB_DEFAULT_LAYOUT="us"                             # Keyboard setup 
-export XKB_DEFAULT_VARIANT="intl"
+#                                                          Default Programs
 
-GTK_IM_MODULE=fcitx                                        # fcitx key layout 
-QT_IM_MODULE=fcitx
-XMODIFIERS=fcitx                                          
-#---------------------------------------------------------------------------------$
-export PATH="$PATH:$XDG_CONFIG_HOME/foot/foot.ini"	       # foot terminal
-#---------------------------------------------------------------------------------$
-export LYNX_CFG="$XDG_CONFIG_HOME/lynx/lynx.cfg"           # lynx
-export LYNX_LSS="$XDG_CONFIG_HOME/lynx/lynx.lss"
-export PATH="$XDG_CONFIG_HOME/lynx/:$PATH"
-#---------------------------------------------------------------------------------$
-export LESSHISTFILE=-                                      # Less
-#---------------------------------------------------------------------------------$
-export TMUXP_CONFIGDIR="$XDG_CONFIG_HOME/tmuxp"            # tmuxp
-#---------------------------------------------------------------------------------$
-export R_LIBS_USER="$XDG_CONFIG_HOME/R/library"            # R Library
-#---------------------------------------------------------------------------------$
-export XDG_DATA_DIR="$XDG_CONFIG_HOME/rofi/theme"          # Rofi themes
-#---------------------------------------------------------------------------------$
-export FZF_BASE="$XDG_CONFIG_HOME/fzf"                     # fzf
-export PATH="$XDG_CONFIG_HOME/fzf/:$PATH"
-#---------------------------------------------------------------------------------$
-export RIPGREP="$XDG_CONFIG_HOME/ripgrep/ripgreprc"        # ripgrep
-#---------------------------------------------------------------------------------$
-export CARGO_HOME="$XDG_CACHE_HOME/cargo"                  # rust
-export RUSTUP_HOME="$XDG_CONFIG_HOME/rustup"
-#---------------------------------------------------------------------------------$
-                                                           # Pass Password Manager
-export PASSWORD_STORE_ENABLE_EXTENSIONS=true               # Enable pass extensions
-export PASS_STORE_DIR="${HOME}/.password-store";           # Default, Tomb's mnt pt
-export PASSWORD_STORE_ENABLE_EXTENSIONS=true               # pass-coffin
-#export GRAVEYARD="${HOME}/.graveyard"                      # Pass Tombs directory. 
-#export GRAVEYARD_KEYS="${GRAVEYARD}/keys"                  # Pass Tombs' keys dir
-#---------------------------------------------------------------------------------$
-#export ZK_PATH="$HOME/Dropbox/Tutorial-Notes"              # Home for zettel notes
-#export ZK_NOTEBOOK_DIR="$ZK_PATH/Notes"                    # Note book 
-#export PATH="$ZK_PATH/zk_script:$PATH" 		            # Home for auto scripts
-#---------------------------------------------------------------------------------$
-#export VIEB_ERWIC="$XDG_CONFIG_HOME/vieb/sec.json"    	    # Erwic rc file
-#export VIEB_DATAFOLDER="$XDG_CONFIG_HOME/viebdata"         # Datafile location
-#---------------------------------------------------------------------------------$
-#export PATH="$ZDOTDIR/Scripts:$PATH"                       # zsh scripts 
-#---------------------------------------------------------------------------------$
-GPG="gpg2"                                                 # gpg2 
-#---------------------------------------------------------------------------------$
-export PATH="$HOME/.local/bin/:$PATH" 				       # General scripts
-export PATH="$HOME/.config/rofi/Scripts/:$PATH"            # Rofi scripts
-#---------------------------------------------------------------------------------$
-#export PATH="$HOME/.config/lf/lfimg/:$PATH" 		        # lfimg scripts
-#---------------------------------------------------------------------------------$
-                                                           # Default Programs
 export EDITOR="nvim"                                       
 export READER="zathura"
 export VISUAL="nvim"
 export TERMINAL="alacritty"
 export VIDEO="mpv"
-export IMAGE="sxiv"
+export IMAGE="feh"
 export COLORTERM="truecolor"
 export OPENER="xdg-open"
 export PAGER="less"
 export BROWSER="vieb"
 export TERM="xterm-256color"
 #---------------------------------------------------------------------------------$
+#                                                         zsh
+
 export HISTFILE="$ZDOTDIR/.zhistory"                      # History filepath
 export HISTSIZE=1000                                      # Maximum events for internal history
-export SAVEHIST=1000                                      # Maximum events in history file
+export SAVEHIST=1000                                      # Maximum events in history file                                         
 #---------------------------------------------------------------------------------$
-export CMUS_HOME="$HOME/.config/cmus"                     # Cmus config 
+#                                                          foot terminal
+
+export PATH="$PATH:$XDG_CONFIG_HOME/foot/foot.ini"	       
 #---------------------------------------------------------------------------------$
-export PATH="$HOME/.config/netrc/:$PATH"                    # credential-netrc
+#                                                          Less
+
+export LESSHISTFILE=-                                      
+#---------------------------------------------------------------------------------$
+#                                                          tmuxp
+
+export TMUXP_CONFIGDIR="$XDG_CONFIG_HOME/tmuxp"            
+#---------------------------------------------------------------------------------$
+#                                                          R-Stats (cran)
+
+export R_LIBS_USER="$XDG_CONFIG_HOME/R/library"            # Library
+#---------------------------------------------------------------------------------$
+#                                                          Rofi
+
+export XDG_DATA_DIR="$XDG_CONFIG_HOME/rofi/theme"          # Themes
+export PATH="$XDG_CONFIG_HOME/rofi/Scripts/:$PATH"         # Scripts
+#---------------------------------------------------------------------------------$
+#                                                          fzf
+
+export FZF_BASE="$XDG_CONFIG_HOME/fzf"                     
+export PATH="$XDG_CONFIG_HOME/fzf/:$PATH"
+#---------------------------------------------------------------------------------$
+#                                                          ripgrep
+
+export RIPGREP="$XDG_CONFIG_HOME/ripgrep/ripgreprc"        
+#---------------------------------------------------------------------------------$
+#                                                          rust
+
+export CARGO_HOME="$XDG_CACHE_HOME/cargo"                  
+export RUSTUP_HOME="$XDG_CONFIG_HOME/rustup"
+#---------------------------------------------------------------------------------$
+#                                                          Pass Password Manager
+
+export PASSWORD_STORE_ENABLE_EXTENSIONS=true               # Enable pass extensions
+export PASS_STORE_DIR="${HOME}/.password-store";           # Default, Tomb's mnt pt
+#---------------------------------------------------------------------------------$
+#                                                          Zettel notes
+
+#export ZK_PATH="$HOME/Dropbox/Tutorial-Notes"             # Home 
+#export ZK_NOTEBOOK_DIR="$ZK_PATH/Notes"                   # Notebook 
+#export PATH="$ZK_PATH/zk_script:$PATH" 		               # Home for auto scripts
+#---------------------------------------------------------------------------------$
+#                                                          Vieb www vim style browser
+
+#export VIEB_ERWIC="$XDG_CONFIG_HOME/vieb/sec.json"    	   # Erwic rc file
+#export VIEB_DATAFOLDER="$XDG_CONFIG_HOME/viebdata"        # Datafile location
+#---------------------------------------------------------------------------------$
+#                                                          Lynx www text brower
+
+export LYNX_CFG="$XDG_CONFIG_HOME/lynx/lynx.cfg"           
+export LYNX_LSS="$XDG_CONFIG_HOME/lynx/lynx.lss"
+export PATH="$XDG_CONFIG_HOME/lynx/:$PATH"
+#---------------------------------------------------------------------------------$
+#                                                          Scripts 
+
+#export PATH="$ZDOTDIR/Scripts:$PATH"                      # zsh  
+export PATH="$HOME/.local/bin/:$PATH" 				             # General
+#---------------------------------------------------------------------------------$
+#                                                          gnupg
+
+GPG="gpg2"                                                 # gpg2 
+#---------------------------------------------------------------------------------$
+#                                                          lf file manager
+
+
+#export PATH="$XDG_CONFIG_HOME/lf/lfimg/:$PATH" 		       # lfimg scripts
+
+#---------------------------------------------------------------------------------$
+#                                                         cmus music player
+
+export CMUS_HOME="$XDG_CONFIG_HOME/cmus"                  # config 
 #---------------------------------------------------------------------------------$
