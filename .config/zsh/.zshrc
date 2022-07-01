@@ -9,6 +9,7 @@ bindkey -v
 #-----------------------$
 # Load scripts
 #-----------------------$
+
 #----------------------------------------------------------------------------------------------------------@#
 fpath=($ZDOTDIR/plugins/zsh-completions/src $fpath )                         #  Completions
 autoload -Uz compinit; compinit
@@ -18,7 +19,7 @@ source $ZDOTDIR/plugins/completion.zsh
 fpath=($ZDOTDIR/plugins/Prompt $fpath )                                      # script defining prompt
 autoload -Uz prompt_purification_setup && prompt_purification_setup
 #----------------------------------------------------------------------------------------------------------@#
-#xrdb -merge -I$HOME $XDG_CONFIG_HOME/X11/Xresources                         # Xresources
+xrdb -merge -I$HOME $XDG_CONFIG_HOME/X11/Xresources                          # Xresources
 #----------------------------------------------------------------------------------------------------------@#
 fpath=($ZDOTDIR/Scripts $fpath )                                             # to run user installed scripts
 autoload -Uz Scripts; Scripts
@@ -36,10 +37,15 @@ source $ZDOTDIR/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  # H
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 source /home/phlight/.config/broot/launcher/bash/br
-CORES=${nproc}
-LOAD=$CORES/2
-JOBS=$LOAD+1
+
+#-----------------------$
+# Compiler makeflags
+#-----------------------$
+CORES=$(nproc)
+LOAD=$((CORES/2))
+JOBS=$((LOAD+1))
 export MAKEFLAGS="-j$JOBS -l$LOAD"                                           # makeflag
+
 #source $XDG_CONFIG_HOME/lf/LF_ICONS                                         # lf icons 
 # lfcd 
 #LFCD="$XDG_CONFIG_HOME/lf/lfcd.sh"
