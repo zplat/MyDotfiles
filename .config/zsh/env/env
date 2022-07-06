@@ -61,7 +61,7 @@ export RUSTUP_HOME="$XDG_CONFIG_HOME/rustup"
 #                                                          Pass Password Manager
 
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true               # Enable pass extensions
-export PASS_STORE_DIR="${HOME}/.password-store";           # Default, Tomb's mnt pt
+export PASS_STORE_DIR="${HOME}/.password-store";           # Default
 #---------------------------------------------------------------------------------$
 #                                                          Zettel notes
 
