@@ -42,17 +42,17 @@ if [ -f $XDG_CONFIG_HOME/X11/xbindkeysrc ]; then
 	xbindkeys -f $XDG_CONFIG_HOME/X11/xbindkeysrc
 fi
 
-#udiskie &
-#dropbox-cli start &
+udiskie &
+dropbox-cli start &
 picom &
 
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS=@im=fcitx
+export GTK_IM_MODULE=fcitx5
+export QT_IM_MODULE=fcitx5
+export XMODIFIERS=@im=fcitx5
 
 setxkbmap -layout us -variant intl
 
-fcitx & sleep 2
+fcitx5 & sleep 2
 
 session=${1:-awesome}
 case $session in
