@@ -91,7 +91,6 @@
     #     "/media/slow-backup-disk"    : no-enter
     #     "/home/dys/useless"    : hide
     #     "/home/dys/my-link-I-want-to-explore"    : enter
-          "/run/media/phlight/Partition1"    : enter
      }
 
     ###############################################################
@@ -209,12 +208,39 @@
         leave_broot: false
     }
 
+
+
+
+    # Shortcut bringing you to .config directory
+     {
+         invocation: config
+         shortcut: gc
+         execution: ":focus ~/.config/"
+     }
+    # Shortcut bringing you to repositories directory
+     {
+         invocation: repositories
+         shortcut: gl
+         execution: ":focus ~/.local/repositories"
+     }
+    # Shortcut bringing you to Storage2 directory
+     {
+         invocation: Storage2
+         shortcut: gs
+         execution: ":focus /run/media/phlight/Storage2/"
+     }
+    # Shortcut bringing you to Partition1 directory
+     {
+         invocation: Partition1
+         shortcut: gp
+         execution: ":focus /run/media/phlight/Partition1/"
+     }
     # Here's an example of a shortcut bringing you to your home directory
-    # {
-    #     invocation: home
-    #     key: ctrl-home
-    #     execution: ":focus ~"
-    # }
+     {
+         invocation: home
+         shortcut: gh
+         execution: ":focus ~"
+     }
 
     # A popular set of shortcuts for going up and down:
     #
