@@ -1,7 +1,7 @@
 #----------------------------------------------------------------------------------------------------------@
 #                                                                               File managers
 
-alias ls="ls -lahsXA" 							                               	            # ls
+alias l="ls -lahsXA" 		    				                                # ls
 #----------------------------------------------------------------------------------------------------------@
 #                                                                               Applications
 
@@ -21,14 +21,15 @@ alias ema="emanote run --port=8080"                                             
 #----------------------------------------------------------------------------------------------------------@
 #                                                                               zk Zettelkasten
 
-alias Default="$ZK_PATH/.zk/templates/Standard.md" 		                     	    # zk default template 
+alias Default="$ZK_PATH/.zk/templates/Standard.md" 		                        # zk default template 
 alias zn="$ZK_PATH/zk_script/znew.sh"                                           # Create zettel 
 alias zs="$ZK_PATH/zk_script/zsnip.sh"                                          # Edit or New zettel 
 #----------------------------------------------------------------------------------------------------------@
 #                                                                               startx Window Manager
 
-alias awesome="startx $XINITRC awesome" 			                                  # awesomewm
-alias dwm="startx $XINITRC dwm"                               				          # dwm
+alias awesome="startx $XINITRC awesome" 			                            # awesomewm
+alias dwm="startx $XINITRC dwm"                               				    # dwm
+alias river="$XDG_CONFIG_HOME/river/nile.sh"                               		# river
 #----------------------------------------------------------------------------------------------------------@
                                                                                 # Web Tools
                                                                                 
@@ -40,9 +41,10 @@ alias shut='shutdown -h now'                                                    
 #----------------------------------------------------------------------------------------------------------@
 #                                                                               Git
                                                                                 
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME' 	      # alias to the dotfiles
-alias secula='/usr/bin/git --git-dir=$HOME/.secfiles/ --work-tree=$HOME' 	      # alias to private dotfiles
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME' 	    # alias to the dotfiles
+alias secula='/usr/bin/git --git-dir=$HOME/.secfiles/ --work-tree=$HOME' 	    # alias to private dotfiles
 #----------------------------------------------------------------------------------------------------------@
 #                                                                               mail
                                                                                 
 alias mbsync="mbsync -c \"$XDG_CONFIG_HOME/isync/mbsyncrc\""                    # mbsyn
+#----------------------------------------------------------------------------------------------------------@
