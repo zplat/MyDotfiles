@@ -28,7 +28,7 @@ set $menu bemenu-run $menu_options | xargs swaymsg exec
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/${USER}/Pictures/Shotgun.jpg fill
+output * bg /run/media/phlight/Storage2/Dropbox/Background/4K/300639-Anime-Girl-Katana-Students-School-4K.jpg fill
 
 # font
 font pango:SourceCodePro Medium 12
