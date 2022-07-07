@@ -189,7 +189,7 @@ screen.connect_signal("property::geometry", set_wallpaper)
 
 
 -- {{{ Wallpapers config
-local wallpaper_dir = os.getenv("HOME") .. "/Dropbox/Background/4K/"
+local wallpaper_dir = "/run/media/phlight/Storage2/Dropbox/Background/4K/"
 local wallpapers = {
     wallpaper_dir .. "Wallpaper (2).jpg",
     wallpaper_dir .. "girl-walking-with-headphones-anime-digital-art-9q-3840x2160.jpg",
