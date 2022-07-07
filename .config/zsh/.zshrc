@@ -46,11 +46,3 @@ LOAD=$((CORES/2))
 JOBS=$((LOAD+1))
 export MAKEFLAGS="-j$JOBS -l$LOAD"                                           # makeflag
 
-#source $XDG_CONFIG_HOME/lf/LF_ICONS                                         # lf icons 
-# lfcd 
-#LFCD="$XDG_CONFIG_HOME/lf/lfcd.sh"
-#if [ -f "$LFCD" ]; then
-#    source "$LFCD"
-#fi
-
-
