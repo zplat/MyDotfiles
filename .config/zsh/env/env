@@ -17,11 +17,12 @@ export PAGER="less"
 export BROWSER="vieb"
 export TERM="xterm-256color"
 #---------------------------------------------------------------------------------$
-#                                                         zsh
+#                                                          zsh
 
-export HISTFILE="$ZDOTDIR/.zhistory"                      # History filepath
-export HISTSIZE=1000                                      # Maximum events for internal history
-export SAVEHIST=1000                                      # Maximum events in history file                                         
+export HISTFILE="$ZDOTDIR/.zhistory"                       # History filepath
+export HISTSIZE=1000                                       # Maximum events for internal history
+export SAVEHIST=1000                                       # Maximum events in history file                                         
+export GPG_TTY=$(tty)                                      # Connect terinal to Std input
 #---------------------------------------------------------------------------------$
 #                                                          foot terminal
 
@@ -67,7 +68,7 @@ export PASS_STORE_DIR="${HOME}/.password-store";           # Default
 
 #export ZK_PATH="$HOME/Dropbox/Tutorial-Notes"             # Home 
 #export ZK_NOTEBOOK_DIR="$ZK_PATH/Notes"                   # Notebook 
-#export PATH="$ZK_PATH/zk_script:$PATH" 		               # Home for auto scripts
+#export PATH="$ZK_PATH/zk_script:$PATH" 		           # Home for auto scripts
 #---------------------------------------------------------------------------------$
 #                                                          Vieb www vim style browser
 
@@ -83,7 +84,7 @@ export PATH="$XDG_CONFIG_HOME/lynx/:$PATH"
 #                                                          Scripts 
 
 #export PATH="$ZDOTDIR/Scripts:$PATH"                      # zsh  
-export PATH="$HOME/.local/bin/:$PATH" 				             # General
+export PATH="$HOME/.local/bin/:$PATH" 				       # General
 #---------------------------------------------------------------------------------$
 #                                                          gnupg
 
@@ -92,10 +93,10 @@ GPG="gpg2"                                                 # gpg2
 #                                                          lf file manager
 
 
-#export PATH="$XDG_CONFIG_HOME/lf/lfimg/:$PATH" 		       # lfimg scripts
+#export PATH="$XDG_CONFIG_HOME/lf/lfimg/:$PATH" 		   # lfimg scripts
 
 #---------------------------------------------------------------------------------$
-#                                                         cmus music player
+#                                                          cmus music player
 
-export CMUS_HOME="$XDG_CONFIG_HOME/cmus"                  # config 
+export CMUS_HOME="$XDG_CONFIG_HOME/cmus"                   # config 
 #---------------------------------------------------------------------------------$
