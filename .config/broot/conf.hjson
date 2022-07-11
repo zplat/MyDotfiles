@@ -220,8 +220,14 @@
     # Shortcut bringing you to repositories directory
      {
          invocation: repositories
-         shortcut: gl
+         shortcut: gr
          execution: ":focus ~/.local/repositories"
+     }
+    # Shortcut bringing you to ~/.local/share directory
+     {
+         invocation: repositories
+         shortcut: gl
+         execution: ":focus ~/.local/share"
      }
     # Shortcut bringing you to Storage2 directory
      {
