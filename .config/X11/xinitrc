@@ -50,7 +50,7 @@ export GTK_IM_MODULE=fcitx5
 export QT_IM_MODULE=fcitx5
 export XMODIFIERS=@im=fcitx5
 
-setxkbmap -layout us -variant intl
+#setxkbmap -layout us -variant intl
 
 fcitx5 & sleep 2
 

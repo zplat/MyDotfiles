@@ -170,6 +170,7 @@
         leave_broot: false
     }
 
+
     # A convenient shortcut to create new text files in
     # the current directory or below
     {
@@ -204,11 +205,8 @@
         invocation: terminal
         key: ctrl-t
         execution: "$SHELL"
-        set_working_dir: true
-        leave_broot: false
+        set_working_dir: true leave_broot: false
     }
-
-
 
 
     # Shortcut bringing you to .config directory

@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 
-DIR="$HOME/Dropbox/Background/4K"
+DIR="/run/media/phlight/Storage2/Dropbox/Background/4K"
 BkGd[0]="$DIR/anime-girl-aqua-blue-4k-gu-3840x2160.jpg"
 BkGd[1]="$DIR/anime-girl-dark-hairs-sitting-window-side-5k-5z-3840x2160.jpg"
 BkGd[2]="$DIR/anime-girl-fantasy-warrior-4K-83.jpg"

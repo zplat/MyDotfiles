@@ -1,13 +1,14 @@
 #----------------------------------------------------------------------------------------------------------@
 #                                                                               File managers
 
-alias l="ls -lahsXA" 		    				                                # ls
+alias l="br -pd" 		    				                                    # ls
 #----------------------------------------------------------------------------------------------------------@
 #                                                                               Applications
 
 alias t='tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf'                             	# tmux
 alias v="nvim"                                                                  # nvim
 alias sx="$XDG_CONFIG_HOME/sxiv/sxiv.sh"                                        # sxiv - open dir/file script
+alias PLAYLIST="$HOME/.local/bin/mpv-player.sh"                                 # mpv playlist in folder
 #----------------------------------------------------------------------------------------------------------@
 #                                                                               Dropbox
 

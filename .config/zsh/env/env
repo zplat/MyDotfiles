@@ -15,6 +15,7 @@ export COLORTERM="truecolor"
 export OPENER="xdg-open"
 export PAGER="less"
 export BROWSER="vieb"
+export BROWSERCLI="lynx"
 export TERM="xterm-256color"
 #---------------------------------------------------------------------------------$
 #                                                          zsh
@@ -62,7 +63,8 @@ export RUSTUP_HOME="$XDG_CONFIG_HOME/rustup"
 #                                                          Pass Password Manager
 
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true               # Enable pass extensions
-export PASS_STORE_DIR="${HOME}/.password-store";           # Default
+export PASS_STORE_DIR="${HOME}/.password-store"            # Default
+export PASSWORD_STORE_GENERATED_LENGTH='64'                # Default
 #---------------------------------------------------------------------------------$
 #                                                          Zettel notes
 
@@ -90,13 +92,20 @@ export PATH="$HOME/.local/bin/:$PATH" 				       # General
 
 GPG="gpg2"                                                 # gpg2 
 #---------------------------------------------------------------------------------$
-#                                                          lf file manager
+#                                                          mailcap
 
 
-#export PATH="$XDG_CONFIG_HOME/lf/lfimg/:$PATH" 		   # lfimg scripts
+export MAILCAPS="$HOME/.config/mailcap/mailcaprc" 		        # mailcap config
+export NOTMUCH_CONFIG="$HOME/.config/notmuch/notmuch-config"    # notmuch config
+
 
 #---------------------------------------------------------------------------------$
 #                                                          cmus music player
 
 export CMUS_HOME="$XDG_CONFIG_HOME/cmus"                   # config 
+#---------------------------------------------------------------------------------$
+#                                                          surfraw
+
+alias srb='surfraw -browser=$BROWSERCLI'                   # (CLI)
+alias srg='surfraw -browser=$BROWSER'                      # (GUI)
 #---------------------------------------------------------------------------------$

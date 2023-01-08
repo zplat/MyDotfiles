@@ -6,7 +6,8 @@
 #
 
 # Rofi
-"~/.config/rofi/Scripts/rofi-bangs.sh"
+#"~/.config/rofi/Scripts/rofi-bangs.sh"
+"~/.config/rofi/Scripts/rofi.sh"
 Control+Shift+Alt+r
 
 # Rofi

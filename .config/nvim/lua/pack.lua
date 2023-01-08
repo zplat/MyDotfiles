@@ -52,6 +52,7 @@ require 'paq' {
      "joshdick/onedark.vim";
      "Mofiqul/dracula.nvim";
      "arcticicestudio/nord-vim";
+     "folke/tokyonight.nvim";
 
     -- zk notes
      "mickael-menu/zk-nvim";
