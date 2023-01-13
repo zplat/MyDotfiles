@@ -68,7 +68,7 @@ export PASSWORD_STORE_GENERATED_LENGTH='64'                # Default
 #---------------------------------------------------------------------------------$
 #                                                          Zettel notes
 
-#export ZK_PATH="$HOME/Dropbox/Tutorial-Notes"             # Home 
+export ZK_PATH="$HOME/Dropbox/Tutorial-Notes"             # Home 
 #export ZK_NOTEBOOK_DIR="$ZK_PATH/Notes"                   # Notebook 
 #export PATH="$ZK_PATH/zk_script:$PATH" 		           # Home for auto scripts
 #---------------------------------------------------------------------------------$
