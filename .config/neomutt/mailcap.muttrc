@@ -1,0 +1,9 @@
+#####################################################################################
+#Mailcap
+#####################################################################################
+set mailcap_path = ~/.config/mailcap/mailcaprc
+alternative_order multipart/mixed text/plain text/calendar application/ics text/html
+auto_view text/html
+auto_view text/calendar
+auto_view application/ics
+set show_multipart_alternative = "info"

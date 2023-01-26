@@ -38,14 +38,17 @@ require 'paq' {
      "rafamadriz/friendly-snippets"; -- a bunch of snippets to use
 
     -- LSP
+     "williamboman/mason.nvim";
+     "williamboman/mason-lspconfig.nvim";
      "neovim/nvim-lspconfig";
-     "williamboman/nvim-lsp-installer";
+
+    -- Linter and formatter
      "jose-elias-alvarez/null-ls.nvim";
 
     -- Treesitter
-     { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" };
+     "nvim-treesitter/nvim-treesitter";
 
-    -- treesitter
+    -- Telescope
      "nvim-telescope/telescope.nvim";
 
     -- colorscheme
@@ -65,10 +68,33 @@ require 'paq' {
 
     -- vim surround
     "machakann/vim-sandwich";
+
+    -- Keybinding
+    "folke/which-key.nvim";
+
+    -- debug
+    "mfussenegger/nvim-dap";
+    --"leoluz/nvim-dap-go";
+    "rcarriga/nvim-dap-ui";
+    --"theHamsta/nvim-dap-virtual-text";
+    --"nvim-telescope/telscope-dap.nvim";
+    --"ravenxrz/DAPInstall.nvim"
+    
+    -- markdown preview
 }
 
 require('nvim-autopairs').setup({
   disable_filetype = { "TelescopePrompt" , "vim" },
 })
 
-require('Comment').setup()
+--require('Comment').setup()
+
+require("mason").setup({
+    ui = {
+        icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗"
+        }
+    }
+})

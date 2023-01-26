@@ -68,9 +68,9 @@ export PASSWORD_STORE_GENERATED_LENGTH='64'                # Default
 #---------------------------------------------------------------------------------$
 #                                                          Zettel notes
 
-export ZK_PATH="$HOME/Dropbox/Tutorial-Notes"             # Home 
-#export ZK_NOTEBOOK_DIR="$ZK_PATH/Notes"                   # Notebook 
-#export PATH="$ZK_PATH/zk_script:$PATH" 		           # Home for auto scripts
+export ZK_PATH="$STORAGE_HOME/Dropbox/Tutorial-Notes"     # Home 
+export ZK_NOTEBOOK_DIR="$ZK_PATH/zettelkasten"             # Notebook 
+#export PATH="$ZK_PATH/zk_script:$PATH" 		            # Home for auto scripts
 #---------------------------------------------------------------------------------$
 #                                                          Vieb www vim style browser
 
@@ -108,4 +108,10 @@ export CMUS_HOME="$XDG_CONFIG_HOME/cmus"                   # config
 
 alias srb='surfraw -browser=$BROWSERCLI'                   # (CLI)
 alias srg='surfraw -browser=$BROWSER'                      # (GUI)
+#---------------------------------------------------------------------------------$
+#                                                          Media Storage 
+
+export EX_MEDIA="/run/media/$USER"                          # External Media 
+export STORAGE_HOME="$EX_MEDIA/Storage2"                   # Storage
+
 #---------------------------------------------------------------------------------$

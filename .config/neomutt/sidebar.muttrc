@@ -1,0 +1,39 @@
+##################################################
+#Sidebar
+##################################################
+# Should the Sidebar be shown?
+set sidebar_visible = no
+# How wide should the Sidebar be in screen columns?
+set sidebar_width = 50
+# Should the mailbox paths be abbreviated?
+set sidebar_short_path = yes
+# Make the Sidebar only display mailboxes that contain new, or flagged,
+# mail.
+set sidebar_new_mail_only = no
+# sidebar_new_mail_only option is enabled.
+sidebar_whitelist '/home/phlight/.local/share/mail
+# When searching for mailboxes containing new mail, should the search wrap
+# around when it reaches the end of the list?
+set sidebar_next_new_wrap = yes
+# Show the Sidebar on the right-hand side of the screen
+set sidebar_on_right = no
+# The character to use as the divider between the Sidebar and the other NeoMutt
+# panels.
+set sidebar_divider_char = '|'
+set sidebar_folder_indent = yes
+set sidebar_indent_string = ' - '
+set sidebar_non_empty_mailbox_only = yes
+set sidebar_component_depth = 0
+# message counts for each mailbox.
+set mail_check_stats  
+# Display the Sidebar mailboxes using this format string.
+#set sidebar_format = '%B%?F? [%F]?%* %?N?%N/?%S'
+  set sidebar_format = '%5N|%5S %B'
+# Sort the mailboxes in the Sidebar using this method:
+#       count    - total number of messages
+#       flagged  - number of flagged messages
+#       new      - number of new messages
+#       path     - mailbox path
+#       unsorted - do not sort the mailboxes
+#set sidebar_sort_method = 'path'
+

@@ -1,3 +1,5 @@
+local o = vim.opt
+
 local options = {
   -----------------------------------------------------------
   -- General
@@ -9,10 +11,12 @@ local options = {
   conceallevel = 0, -- so that `` is visible in markdown files
   fileencoding = "utf-8", -- the encoding written to a file
   showmode = false, -- we don't need to see things like -- INSERT -- anymore
+  spelllang = "en", -- spell checker languages
 
   -----------------------------------------------------------
   -- Neovim UI
   -----------------------------------------------------------
+
   number = true, -- show line number
   relativenumber = true, -- set relative numbered lines
   -- colorcolumn = '80',         -- line length marker at 80 columns
@@ -44,6 +48,8 @@ local options = {
   undofile = true, -- enable persistent undo
   updatetime = 300, -- faster completion (4000ms default)
   writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
+
+  shm = "c", --avoid all the hit-enter prompts caused by file messages
 
   -----------------------------------------------------------
   -- Colorscheme
@@ -78,12 +84,29 @@ local options = {
 
 }
 
-vim.opt.shortmess:append "c"
+--avoid all the hit-enter prompts caused by file messages
+--vim.opt.shortmess:append "c"
 
 for k, v in pairs(options) do
-  vim.opt[k] = v
+  o[k] = v
 end
 
-vim.cmd "set whichwrap+=<,>,[,],h,l"
-vim.cmd [[set iskeyword+=-]]
-vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
+-- move to the previous/next line after reaching first/last character in the line.
+--vim.cmd "set whichwrap+=<,>,[,],h,l"
+o.whichwrap:append {
+  ['<'] = true,
+  ['>'] = true,
+  ['['] = true,
+  [']'] = true,
+  h = true,
+  l = true,
+}
+-- allows the user to denote what should or should not be treated as part of a word.
+--vim.cmd [[set iskeyword+=-]]
+--o.iskeyword:append("-","[","]")
+o.iskeyword:append{
+    ['-'] = true,
+    [']'] = true,
+    ['['] = true,
+}
+

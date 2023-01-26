@@ -10,11 +10,6 @@ alias v="nvim"                                                                  
 alias sx="$XDG_CONFIG_HOME/sxiv/sxiv.sh"                                        # sxiv - open dir/file script
 alias PLAYLIST="$HOME/.local/bin/mpv-player.sh"                                 # mpv playlist in folder
 #----------------------------------------------------------------------------------------------------------@
-#                                                                               Dropbox
-
-alias drpx="dropbox-cli start"                                                  # dropbox-cli start
-alias drpxstop="dropbox-cli stop"                                               # dropbox-cli stop
-#----------------------------------------------------------------------------------------------------------@
 #                                                                               Neuron Zettelkasten
 
 alias nix="~/.nix-profile/bin/neuron"                                           # neuron nix
@@ -47,5 +42,5 @@ alias secula='/usr/bin/git --git-dir=$HOME/.secfiles/ --work-tree=$HOME' 	    # 
 #----------------------------------------------------------------------------------------------------------@
 #                                                                               mail
                                                                                 
-alias mbsync="mbsync -c \"$XDG_CONFIG_HOME/isync/mbsyncrc\""                    # mbsyn
+alias mbsync="mbsync -c \"$XDG_CONFIG_HOME/isync/mbsyncrc\""                    # mbsync
 #----------------------------------------------------------------------------------------------------------@
