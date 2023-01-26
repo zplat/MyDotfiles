@@ -1,7 +1,0 @@
-virtual-mailboxes "All Accounts" "notmuch://?query=tag:inbox"
-virtual-mailboxes "Today" "notmuch://?query=date:1d.."
-virtual-mailboxes "Yesterday" "notmuch://?query=date:2d..0d"
-virtual-mailboxes "7 days" "notmuch://?query=date:1W.."
-#virtual-mailboxes "All Mail" "notmuch://?query=tag:inbox%20and%20path:twyrl%2F**"
-virtual-mailboxes "Last 4 Wks" "notmuch://?query=date:19M..1W and tag:inbox and NOT tag:unread" 
-
