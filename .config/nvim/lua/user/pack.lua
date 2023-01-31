@@ -70,8 +70,6 @@ require("lazy").setup({
     { "lewis6991/gitsigns.nvim", config = true, event = "BufEnter" },
     { "iamcco/markdown-preview.nvim", ft = "markdown" },
     
-    -- linter and formatter
-    {"jose-elias-alvarez/null-ls.nvim",},
 
     -- vim surround
     {"machakann/vim-sandwich",},
