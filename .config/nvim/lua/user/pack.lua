@@ -65,9 +65,11 @@ require("lazy").setup({
     {"mofiqul/dracula.nvim",},
     {"arcticicestudio/nord-vim",},
     { "folke/tokyonight.nvim" },
-    
-   -- { "phaazon/hop.nvim", branch = "v2", config = true, event = "BufEnter" },
+ 
+    { "phaazon/hop.nvim", branch = "v2", config = true, event = "BufEnter" },
+
     { "lewis6991/gitsigns.nvim", config = true, event = "BufEnter" },
+    
     { "iamcco/markdown-preview.nvim", ft = "markdown" },
     
 
@@ -82,8 +84,8 @@ require("lazy").setup({
       },
 
     -- debug
-    {"mfussenegger/nvim-dap",},
-    {"rcarriga/nvim-dap-ui",},
+    {"mfussenegger/nvim-dap", lazy = true},
+    {"rcarriga/nvim-dap-ui", lazy = true},
 
     -- zk notes
     {"mickael-menu/zk-nvim",},

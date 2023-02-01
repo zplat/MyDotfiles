@@ -1,7 +1,5 @@
 local opts = { noremap = true, silent = true }
 
-
-
 local term_opts = { silent = true }
 
 -- Shorten function name
@@ -26,12 +24,6 @@ keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
-
-
--- remove s shortcut for "cl". rm char & edit mode.
---keymap("x", "s", "<Nop>", opts)
---keymap("n", "s", "<Nop>", opts)
---keymap("", "<Space>", "<Nop>", opth)
 
 -- Rehize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
@@ -66,11 +58,14 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 keymap("n", "<leader>;", "<cmd>qa!<CR>", opts)
 
+-- Telescope
+keymap('n', '<leader>ff', '<cmd>lua require"telescope.builtin".find_files(require("telescope.themes").get_dropdown({ previewer = false, hidden = true, file_ignore_patterns = {".git", "vendor", "node_modules"} }))<cr>', opts)
+keymap('n', '<leader>fb', '<cmd>Telescope git_branches<cr>', opts)
+keymap('n', '<leader>fs', '<cmd>Telescope git_status<cr>', opts)
 
-
--- Terminal --
--- Better terminal navigation
--- keymap("n", "<C-h", "<C-\\><C-N><C-w>h", term_opts)
--- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
--- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
--- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+-- hop
+keymap('', 'f', '<cmd>HopChar1CurrentLine<cr>', opts)
+keymap('', 'F', '<cmd>HopChar2CurrentLine<cr>', opts)
+keymap('', '<leader>al', '<cmd>HopChar2<cr>', opts)
+keymap('', '<leader>aw', '<cmd>HopWord<cr>', opts)
+keymap('', '<leader>aa', '<cmd>HopChar1<cr>', opts)
