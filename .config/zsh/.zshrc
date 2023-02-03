@@ -46,3 +46,7 @@ LOAD=$((CORES/2))
 JOBS=$((LOAD+1))
 export MAKEFLAGS="-j$JOBS -l$LOAD"                                           # makeflag
 
+#-----------------------$
+#  Nodejs manager
+#-----------------------$
+source /usr/share/nvm/init-nvm.sh

@@ -57,6 +57,8 @@ keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 keymap("n", "<leader>;", "<cmd>qa!<CR>", opts)
+keymap("n", "<leader>]", "<cmd>q!<CR>", opts)
+keymap("n", "<leader>w", "<cmd>w<CR>", opts)
 
 -- Telescope
 keymap('n', '<leader>ff', '<cmd>lua require"telescope.builtin".find_files(require("telescope.themes").get_dropdown({ previewer = false, hidden = true, file_ignore_patterns = {".git", "vendor", "node_modules"} }))<cr>', opts)
