@@ -71,3 +71,14 @@ keymap('', 'F', '<cmd>HopChar2CurrentLine<cr>', opts)
 keymap('', '<leader>al', '<cmd>HopChar2<cr>', opts)
 keymap('', '<leader>aw', '<cmd>HopWord<cr>', opts)
 keymap('', '<leader>aa', '<cmd>HopChar1<cr>', opts)
+
+-- dap debug
+keymap('n', '<F5>', ":lua require'dap'.continue()<cr>", opts)
+keymap('n', '<F10>', ":lua require'dap'.step_over()<cr>", opts)
+keymap('n', '<F11>', ":lua require'dap'.step_into()<cr>", opts)
+keymap('n', '<F12>', ":lua require'dap'.step_out()<cr>", opts)
+keymap('n', '<leader>b', ":lua require'dap'.toggle_breakpoint()<cr>", opts)
+keymap('n', '<leader>B', ":lua require'dap'.set_breakpont(vim.fn.input('Breakpoint condition: '))<cr>", opts)
+keymap('n', '<leader>lp', ":lua require'dap'.set_breakpont(nil, nil, vim.fn.input(Log point message: '))<cr>", opts)
+keymap('n', '<leader>dr', ":lua require'dap'.repl.open()<cr>", opts)
+
