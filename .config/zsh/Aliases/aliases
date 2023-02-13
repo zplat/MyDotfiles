@@ -9,6 +9,9 @@ alias t='tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf'                             	#
 alias v="nvim"                                                                  # nvim
 alias sx="$XDG_CONFIG_HOME/sxiv/sxiv.sh"                                        # sxiv - open dir/file script
 alias PLAYLIST="$HOME/.local/bin/mpv-player.sh"                                 # mpv playlist in folder
+#										modern nvim
+alias mnv='XDG_DATA_HOME=$MODERN_NEOVIM/share XDG_CACHE_HOME=$MODERN_NEOVIM XDG_CONFIG_HOME=$MODERN_NEOVIM nvim'
+
 #----------------------------------------------------------------------------------------------------------@
 #                                                                               Emanote Zettelkasten
 

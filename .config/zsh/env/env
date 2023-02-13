@@ -115,3 +115,6 @@ export EX_MEDIA="/run/media/$USER"                          # External Media
 export STORAGE_HOME="$EX_MEDIA/Storage2"                   # Storage
 
 #---------------------------------------------------------------------------------$
+#                                                          Modern Neovim  
+export MODERN_NEOVIM=~/.config/modern-neovim
+#---------------------------------------------------------------------------------$
