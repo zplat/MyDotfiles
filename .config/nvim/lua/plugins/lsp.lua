@@ -3,12 +3,9 @@ return {
   {
     "folke/neodev.nvim",
     opts = {
-      debug = true,
-      experimental = {
-        pathStrict = true,
-      },
       library = {
-        runtime = "~/projects/neovim/runtime/",
+        plugins = { "neotest", "nvim-dap-ui" },
+        types = true,
       },
     },
   },
@@ -17,107 +14,31 @@ return {
   {
     "williamboman/mason.nvim",
     opts = {
-      ensure_installed = {
-        "prettierd",
-        "stylua",
-        "selene",
-        "luacheck",
-        "eslint_d",
-        "shellcheck",
-        "deno",
-        "shfmt",
-        "black",
-        "isort",
-        "flake8",
-      },
+      ensure_installed = {},
     },
   },
-
   -- lsp servers
   {
     "neovim/nvim-lspconfig",
     opts = {
       ---@type lspconfig.options
-      servers = {
-        ansiblels = {},
-        bashls = {},
-        clangd = {},
-        denols = false,
-        cssls = {},
-        dockerls = {},
-        tsserver = {},
-        svelte = {},
-        eslint = {},
-        html = {},
-        gopls = {},
-        marksman = {},
-        pyright = {},
-        rust_analyzer = {
-          settings = {
-            ["rust-analyzer"] = {
-              cargo = { allFeatures = true },
-              checkOnSave = {
-                command = "clippy",
-                extraArgs = { "--no-deps" },
-              },
-            },
-          },
-        },
-        yamlls = {},
-        sumneko_lua = {
-          -- cmd = { "/home/folke/projects/lua-language-server/bin/lua-language-server" },
-          single_file_support = true,
-          settings = {
-            Lua = {
-              workspace = {
-                checkThirdParty = false,
-              },
-              completion = {
-                workspaceWord = true,
-                callSnippet = "Both",
-              },
-              misc = {
-                parameters = {
-                  "--log-level=trace",
-                },
-              },
-              diagnostics = {
-                -- enable = false,
-                groupSeverity = {
-                  strong = "Warning",
-                  strict = "Warning",
-                },
-                groupFileStatus = {
-                  ["ambiguity"] = "Opened",
-                  ["await"] = "Opened",
-                  ["codestyle"] = "None",
-                  ["duplicate"] = "Opened",
-                  ["global"] = "Opened",
-                  ["luadoc"] = "Opened",
-                  ["redefined"] = "Opened",
-                  ["strict"] = "Opened",
-                  ["strong"] = "Opened",
-                  ["type-check"] = "Opened",
-                  ["unbalanced"] = "Opened",
-                  ["unused"] = "Opened",
-                },
-                unusedLocalExclude = { "_*" },
-              },
-              format = {
-                enable = false,
-                defaultConfig = {
-                  indent_style = "space",
-                  indent_size = "2",
-                  continuation_indent_size = "2",
-                },
-              },
-            },
-          },
-        },
-        teal_ls = {},
-        vimls = {},
-        -- tailwindcss = {},
-      },
+      servers = {},
     },
+  },
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    event = "BufReadPre",
+    dependencies = { "mason.nvim" },
+    config = function()
+      local nls = require("null-ls")
+      nls.setup({
+        sources = {
+          -- code formatter for lua
+          nls.builtins.formatting.stylua,
+          -- fast python linter written in rust
+          nls.builtins.diagnostics.ruff.with({ extra_args = { "--max-line-length=180" } }),
+        },
+      })
+    end,
   },
 }

@@ -94,7 +94,6 @@ GPG="gpg2"                                                 # gpg2
 #---------------------------------------------------------------------------------$
 #                                                          mailcap
 
-
 export MAILCAPS="$HOME/.config/mailcap/mailcaprc" 		        # mailcap config
 export NOTMUCH_CONFIG="$HOME/.config/notmuch/notmuch-config"    # notmuch config
 
@@ -114,7 +113,4 @@ alias srg='surfraw -browser=$BROWSER'                      # (GUI)
 export EX_MEDIA="/run/media/$USER"                          # External Media 
 export STORAGE_HOME="$EX_MEDIA/Storage2"                   # Storage
 
-#---------------------------------------------------------------------------------$
-#                                                          Modern Neovim  
-export MODERN_NEOVIM=~/.config/modern-neovim
 #---------------------------------------------------------------------------------$

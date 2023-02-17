@@ -168,6 +168,9 @@ do
     riverctl map $mode None XF86MonBrightnessDown spawn 'light -U 5'
 done
 
+#Start the following programs on start up.
+udiskie &
+
 # Set background and border color
 #riverctl background-color 0x002b36
 riverctl border-color-focused 0x93a1a1
@@ -183,11 +186,7 @@ riverctl float-filter-add app-id float
 riverctl float-filter-add title "popup title with spaces"
 
 # Set app-ids and titles of views which should use client side decorations
-riverctl csd-filter-add app-id "gedit"
-
-#Start the following programs on start up.
-udiskie &
-dropbox-cli start &
+#riverctl csd-filter-add app-id "gedit"
 
 # Set and exec into the default layout generator, rivertile.
 # River will send the process group of the init executable SIGTERM on exit.

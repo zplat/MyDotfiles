@@ -44,18 +44,6 @@ _clip_out_clipboard() {
   # wl-paste
 }
 
-
-# xdotool needs the keyboard layout to be set using setxkbmap
-# You can do this in your autostart scripts (e.g. xinitrc)
-
-# If for some reason, you cannot do this, you can set the command here.
-# and set fix_layout to true
-fix_layout=false
-
-layout_cmd () {
-  setxkbmap us(intl)
-}
-
 # fields to be used
 URL_field='url'
 USERNAME_field='user'
@@ -72,7 +60,7 @@ xdotool_delay=12
 
 ## Programs to be used
 # Editor
-EDITOR='gvim -f'
+EDITOR='nvim -f'
 
 # Browser
 BROWSER='xdg-open'

@@ -1,7 +1,10 @@
 #----------------------------------------------------------------------------------------------------------@
 #                                                                               File managers
 
-alias l="br -pd" 		    				                                    # ls
+alias l="br -pd"                                                                # ls via broot	
+alias L="ls -laA"             		    			                                    # ls
+alias Ld='ls -d */'	    				                                                # directories only
+alias Lf="ls -l | egrep -v '^d'"                                                # files only
 #----------------------------------------------------------------------------------------------------------@
 #                                                                               Applications
 

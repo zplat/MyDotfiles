@@ -6,11 +6,10 @@
 #
 
 # Rofi
-#"~/.config/rofi/Scripts/rofi-bangs.sh"
-"~/.config/rofi/Scripts/rofi.sh"
+"rofi -show"
 Control+Shift+Alt+r
 
-# Rofi
+# Rofi pass 
 "/usr/bin/rofi-pass"
 Control+Shift+Alt+h
 
