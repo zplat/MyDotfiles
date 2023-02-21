@@ -1,0 +1,11 @@
+[Unit]
+Description=Searx
+
+[Service]
+Type=simple
+WorkingDirectory=%h/.config/zsh/Scripts 
+ExecStart=%h/.config/zsh/Scripts/searx.sh
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

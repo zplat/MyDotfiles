@@ -8,7 +8,7 @@
 export EDITOR="nvim"                                       
 export READER="zathura"
 export VISUAL="nvim"
-export TERMINAL="alacritty"
+export TERMINAL="alacritty,xterm-kitty"
 export VIDEO="mpv"
 export IMAGE="feh"
 export COLORTERM="truecolor"
