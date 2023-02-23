@@ -53,5 +53,5 @@ alias flash_9="qmk flash -kb ferris/sweep -km ferris9 -bl dfu"                  
 #----------------------------------------------------------------------------------------------------------@
 #                                                                               qmk
                                                                                 
-alias kitty="$HOME/.local/repositories/kitty/kitty/launcher/kitty"             # kitty terminal
+alias kytty="$HOME/.local/repositories/kitty/kitty/launcher/kitty"             # kitty terminal
 #----------------------------------------------------------------------------------------------------------@
