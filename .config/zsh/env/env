@@ -18,6 +18,9 @@ export BROWSER="vieb"
 export BROWSERCLI="lynx"
 export TERM="xterm-256color"
 #---------------------------------------------------------------------------------$
+#                                                          git repositories
+export REPOSITORIES="$HOME/.local/repositories"
+#---------------------------------------------------------------------------------$
 #                                                          zsh
 
 export HISTFILE="$ZDOTDIR/.zhistory"                       # History filepath
@@ -113,4 +116,7 @@ alias srg='surfraw -browser=$BROWSER'                      # (GUI)
 export EX_MEDIA="/run/media/$USER"                          # External Media 
 export STORAGE_HOME="$EX_MEDIA/Storage2"                   # Storage
 
+#---------------------------------------------------------------------------------$
+#                                                          # searx setup
+export SEARX_SETTINGS_PATH="$REPOSITORIES/searx/searx/settings.yml"
 #---------------------------------------------------------------------------------$
