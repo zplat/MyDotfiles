@@ -43,12 +43,7 @@ if [ -f $XDG_CONFIG_HOME/X11/xbindkeysrc ]; then
 fi
 
 udiskie &
-dropbox-cli start &
 picom &
-
-export GTK_IM_MODULE=fcitx5
-export QT_IM_MODULE=fcitx5
-export XMODIFIERS=@im=fcitx5
 
 #setxkbmap -layout us -variant intl
 
