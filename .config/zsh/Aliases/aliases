@@ -23,12 +23,13 @@ alias ema="zk ema"                                                              
 #                                                                               zk Zettelkasten
 
 alias daily="zk daily"                                                          # Daily journal 
+alias zi="zk edit -i"                                                            # zk edit interactive
 #----------------------------------------------------------------------------------------------------------@
 #                                                                               startx Window Manager
 
 alias awesome="startx $XINITRC awesome" 			                            # awesomewm
 alias dwm="startx $XINITRC dwm"                               				    # dwm
-alias river="$XDG_CONFIG_HOME/river/nile.sh"                               		# river
+alias River="$XDG_CONFIG_HOME/river/nile.sh"                               		# river
 #----------------------------------------------------------------------------------------------------------@
                                                                                 # Web Tools
                                                                                 
