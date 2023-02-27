@@ -123,3 +123,6 @@ export SEARX_SETTINGS_PATH="$REPOSITORIES/searx/searx/settings.yml"
 #                                                          # eww bar (bar)
 export EWW="$REPOSITORIES/eww/target/release"
 #---------------------------------------------------------------------------------$
+#                                                          # Qt for wayland
+export QT_QPA_PLATFORM=wayland
+#---------------------------------------------------------------------------------$

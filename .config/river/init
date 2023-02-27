@@ -8,9 +8,6 @@
 # See the river(1), riverctl(1), and rivertile(1) man pages for complete
 # documentation.
 
-XKB_DEFAULT_LAYOUT="us"
-XKB_DEFAULT_VARIANT="intl"
-
 # Note: the "Super" modifier is also known as Logo, GUI, Windows, Mod4, etc.
 TERM=footclient
 TERMB="alacritty -o font.size=24"
@@ -22,43 +19,58 @@ WALLPAPER=background.sh
 EDITOR='nvim'
 MENU=fuzzel
 PASS=tessen
+KEYMAP=keyboard.sh
+SEARX="http://127.0.0.1:8888"
+LOCALHOST="http://127.0.0.1"
+
+# Note: the "Super" modifier is also known as Logo, GUI, Windows, Mod4, etc.
+
+mod="Mod4"
 
 #--------------------------
 #          SPAWNS
 #--------------------------
-#riverctl spawn fcitx5
-riverctl spawn udiskie-cli
+riverctl spawn udiskie
 #riverctl spawn dropbox
-#riverctl spawn yambar
+riverctl spawn waybar
 riverctl spawn mako
 #riverctl spawn "clipman-cli watcher"
-riverctl spawn pipewire
+riverctl spawn "pipewire"
+#riverctl spawn "waybar-restart"
+riverctl spawn "wireplumber"
 riverctl spawn "foot --server"
-#riverctl spawn "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river"
-#riverctl spawn "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river"
-riverctl spawn "EWW/eww daemon"
-
+riverctl spawn "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river"
+riverctl spawn "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river"
+#riverctl spawn "EWW/eww daemon"
+riverctl spawn "fcitx5 -d -s 3"
 
 #--------------------------
 #         MAPPINGS
 #--------------------------
-riverctl map normal Super F1 spawn "$TERM nvim ~/.config/river/init"             # init file
-riverctl map normal Super+Shift        Return spawn "$TERM"                      # foot
-riverctl map normal Super+Control      Return spawn "$TERMB"                     # alacritty
-riverctl map normal Super+Alt          Return spawn "$TERMC"                     # kitty
-riverctl map normal Super+Control+Shift+Alt P spawn "$EWW/eww open powermenu"    # open eww bar
-riverctl map normal Super+Control+Shift+Alt Y spawn "$EWW/eww close powermenu"   # close eww bar
-riverctl map normal Super+Alt               r spawn "$MENU"                      # MENU fuzzel 
-riverctl map normal Super+Alt               h spawn "$MENU"                      # PASS passwd mge tessen
-riverctl map normal Super+Alt               f spawn "$FILES"                     # FILES broot=>br
-riverctl map normal Super+Alt               b spawn "$BROWSER"                   # BROWSER vieb
-riverctl map normal Super+Alt               m spawn "$MAIL"                      # MAIL neomutt
-riverctl map normal Super+Alt               i spawn "$EDITOR"                    # EDITOR nvim
+riverctl map -repeat normal Super F1 spawn "$TERM nvim ~/.config/river/init"             # init file
+riverctl map -repeat normal Super+Shift        Return spawn "$TERM"                      # foot
+riverctl map -repeat normal Super+Control      Return spawn "$TERMB"                     # alacritty
+riverctl map -repeat normal Super+Alt          Return spawn "$TERMC"                     # kitty
+riverctl map -repeat normal Super+Alt               r spawn "$MENU"                      # MENU fuzzel 
+riverctl map -repeat normal Super+Alt               t spawn "$PASS"                      # PASS passwd mge tessen
+riverctl map -repeat normal Super+Alt               f spawn "$FILES"                     # FILES broot=>br
+riverctl map -repeat normal Super+Alt               b spawn "$BROWSER"                   # BROWSER vieb
+riverctl map -repeat normal Super+Alt               m spawn "foot $MAIL"                 # MAIL neomutt
+riverctl map -repeat normal Super+Alt               i spawn "foot $EDITOR"               # EDITOR nvim
+riverctl map -repeat normal Super+Alt               s spawn "vieb $SEARX"                # Search engine
+riverctl map -repeat normal Super+Alt               l spawn "vieb $LOCALHOST"            # localhost
 #--------------------------
 #          SCRIPT
 #--------------------------
 
 
+# Mod+D to launch rofi
+riverctl map -repeat normal $mod D spawn "rofi -show run"
+riverctl map -repeat normal $mod+Shift D spawn "rofi -show drun"
+riverctl map -repeat normal $mod+Shift C spawn "rofi -show calc"
+
+# Bind useful Scripts
+#riverctl map -repeat normal $mod n spawn "foot nvim ~/vimwiki/index.md"
 
 #--------------------------
 #          BUILT-IN
@@ -74,8 +86,8 @@ riverctl map normal Super Comma focus-output previous                           
 riverctl map normal Super+Shift Period send-to-output next                       # send focus to next output
 riverctl map normal Super+Shift Comma send-to-output previous                    # send focus to previous output
 riverctl map normal Super Return zoom                                            # bump view->top of layout stack
-riverctl map normal Super Space toggle-float                                     # to toggle to float
-riverctl map normal Super F toggle-fullscreen                                    # toggle full screen
+#riverctl map normal Super Space toggle-float                                     # to toggle to float
+#riverctl map normal Super F toggle-fullscreen                                    # toggle full screen
 riverctl declare-mode passthrough                                                # passthrough mode.
 riverctl map normal Super F11 enter-mode passthrough                             # enter passthrough mode
 riverctl map passthrough Super F11 enter-mode normal                             # return to normal mode
@@ -110,8 +122,6 @@ riverctl set-repeat 50 300                                                      
 riverctl float-filter-add app-id float                                           # make certain views start foating
 riverctl float-filter-add title "popup title with spaces"                        # Add title
 riverctl default-layout rivertile                                                # default layout
-exec rivertile -view-padding 6 -outer-padding 6                                  # set padding
-
 
 #--------------------------
 #          scratchpad
@@ -134,7 +144,7 @@ riverctl spawn-tagmask ${all_but_sticky_tag}
 #--------------------------
 for i in $(seq 1 9)
 do
-    tags=$((1 << ($i - 1)))
+    tags=$((1 << (i - 1)))
     # Super+[1-9] to focus tag [0-8]
     #riverctl map normal Super $i set-focused-tags $tags
     riverctl map normal Super $i set-focused-tags $(($sticky_tag + $tags)) 
@@ -144,7 +154,6 @@ do
     riverctl map normal Super+Control $i toggle-focused-tags $tags
     # Super+Shift+Ctrl+[1-9] to toggle tag [0-8] of focused view
     riverctl map normal Super+Shift+Control $i toggle-view-tags $tags
-    riverclt map normal Super $i spawn background.sh $i  
 done
 #--------------------------
 #          All Tags
@@ -153,31 +162,25 @@ all_tags=$(((1 << 32) - 1))                                 # all tags
 riverctl map normal Super 0 set-focused-tags $all_tags      # to focus all tags
 riverctl map normal Super+Shift 0 set-view-tags $all_tags   # to tag focused view with all tags
 
-#--------------------------
-#          Media Keys
-#--------------------------
-for mode in normal locked
-do
-    # Eject the optical drive (well if you still have one that is)
-    riverctl map $mode None XF86Eject spawn 'eject -T'
+# Mod+Tab to go to the previous tag
+riverctl map -repeat normal $mod TAB focus-previous-tags
 
-    # Control pulse audio volume with pamixer (https://github.com/cdemoulins/pamixer)
-    riverctl map $mode None XF86AudioRaiseVolume  spawn 'pamixer -i 5'
-    riverctl map $mode None XF86AudioLowerVolume  spawn 'pamixer -d 5'
-    riverctl map $mode None XF86AudioMute         spawn 'pamixer --toggle-mute'
+# Mod+Space to toggle float
+riverctl map -repeat normal $mod+Shift Space toggle-float
 
-    # Control MPRIS aware media players with playerctl (https://github.com/altdesktop/playerctl)
-    riverctl map $mode None XF86AudioMedia spawn 'playerctl play-pause'
-    riverctl map $mode None XF86AudioPlay  spawn 'playerctl play-pause'
-    riverctl map $mode None XF86AudioPrev  spawn 'playerctl previous'
-    riverctl map $mode None XF86AudioNext  spawn 'playerctl next'
+# Mod+F to toggle fullscreen
+riverctl map -repeat normal $mod F toggle-fullscreen
 
-    # Control screen backlight brightness with light (https://github.com/haikarainen/light)
-    riverctl map $mode None XF86MonBrightnessUp   spawn 'light -A 5'
-    riverctl map $mode None XF86MonBrightnessDown spawn 'light -U 5'
-done
+# set keyboard
+$KEYMAP
 
-#--------------------------
-#          Bar 
-#--------------------------
-riverctl map normal Super+Alt r waybar
+# Set background and border color
+$WALLPAPER
+
+riverctl xcursor-theme 'Bibata-Modern-Ice' 24
+
+# Other options
+riverctl attach-mode bottom
+riverctl set-cursor-warp on-output-change
+
+exec rivertile -view-padding 6 -outer-padding 6

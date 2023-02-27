@@ -19,7 +19,7 @@ source $ZDOTDIR/plugins/completion.zsh
 fpath=($ZDOTDIR/plugins/Prompt $fpath )                                      # script defining prompt
 autoload -Uz prompt_purification_setup && prompt_purification_setup
 #----------------------------------------------------------------------------------------------------------@#
-xrdb -merge -I$HOME $XDG_CONFIG_HOME/X11/Xresources                          # Xresources
+#!/bin/bashxrdb -merge -I$HOME $XDG_CONFIG_HOME/X11/Xresources                          # Xresources
 #----------------------------------------------------------------------------------------------------------@#
 fpath=($ZDOTDIR/Scripts $fpath )                                             # to run user installed scripts
 autoload -Uz Scripts; Scripts
