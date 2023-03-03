@@ -126,3 +126,6 @@ export EWW="$REPOSITORIES/eww/target/release"
 #                                                          # Qt for wayland
 export QT_QPA_PLATFORM=wayland
 #---------------------------------------------------------------------------------$
+#                                                          # grep colouring
+export GREP_OPTIONS='--color=auto' GREP_COLORS='mt=1;37;41'
+#---------------------------------------------------------------------------------$
