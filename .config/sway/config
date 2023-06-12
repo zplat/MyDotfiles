@@ -7,6 +7,9 @@
 
 # clipman
 exec wl-paste -t text --watch clipman store
+# udiskie
+exec_always udiskie
+exec pipewire
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -28,7 +31,11 @@ set $menu bemenu-run $menu_options | xargs swaymsg exec
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /run/media/phlight/Storage2/Dropbox/Background/4K/300639-Anime-Girl-Katana-Students-School-4K.jpg fill
+set $DIR "/run/media/phlight/Storage2/Dropbox/Background/1K"
+set $FOLDER "6K"
+set $PICTURE \'sleepless-nights-4k-xn-3840x2160.jpg\'
+
+output * bg "$DIR/$FOLDER/$PICTURE" fill
 
 # font
 font pango:SourceCodePro Medium 12
@@ -215,7 +222,7 @@ bar {
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while date +'%d-%m-%Y %I:%M:%S %p'; do sleep 1; done
+    status_command while date +'%d-%m-%Y %H:%M:%S '; do sleep 1; done
 
     colors {
         statusline #ffffff
@@ -228,12 +235,19 @@ input type:keyboard {
 	xkb_layout us
 	xkb_variant intl
 }
-set $opacity 0.8
-for_window [class=".*"] opacity $opacity
-for_window [class="Vieb"] opacity 1.0
-for_window [class="Google-chrome"] opacity 1.0
-for_window [app_id=".*"] opacity $opacity
-for_window [app_id="mpv"] opacity 1.0
+bindsym Mod4+x exec ".config/sway/run.d/toggle_transparent.sh plus"
+bindsym Mod4+Shift+x exec ".config/sway/run.d/toggle_transparent.sh minus"
+#set $opacity 1.0
+#
+#for_window [class=".*"] opacity $opacity
+#for_window [class="Vieb"] opacity 1.0
+#for_window [class="Google-chrome"] opacity 1.0
+#for_window [app_id=".*"] opacity $opacity
+#for_window [app_id="mpv"] opacity 1.0
+
+
+bindsym Control+Shift+Alt+r exec "fuzzel"
+bindsym Control+Shift+Alt+h exec "rofi-pass"
 
 # fcitx5 startun
 # exec --no-startup-id fcitx5 -d

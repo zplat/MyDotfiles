@@ -12,7 +12,7 @@
 TERM=footclient
 TERMB="alacritty -o font.size=24"
 TERMC=kitty
-FILES="br.sh"
+FILES=br.sh
 BROWSER=vieb
 MAIL=neomutt
 WALLPAPER=background.sh
@@ -26,23 +26,25 @@ LOCALHOST="http://127.0.0.1"
 # Note: the "Super" modifier is also known as Logo, GUI, Windows, Mod4, etc.
 
 mod="Mod4"
+MEH=Super+Shift+Alt
+HYPER=Super+Shift+Alt+Control
 
 #--------------------------
 #          SPAWNS
 #--------------------------
+riverctl spawn "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river"
+riverctl spawn "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river"
 riverctl spawn udiskie
 #riverctl spawn dropbox
-riverctl spawn waybar
+#riverctl spawn waybar
 riverctl spawn mako
 #riverctl spawn "clipman-cli watcher"
 riverctl spawn "pipewire"
-#riverctl spawn "waybar-restart"
+riverctl spawn "waybar-restart"
 riverctl spawn "wireplumber"
 riverctl spawn "foot --server"
-riverctl spawn "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river"
-riverctl spawn "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river"
 #riverctl spawn "EWW/eww daemon"
-riverctl spawn "fcitx5 -d -s 3"
+#riverctl spawn "fcitx5 -d -s 3"
 
 #--------------------------
 #         MAPPINGS
@@ -53,21 +55,19 @@ riverctl map -repeat normal Super+Control      Return spawn "$TERMB"            
 riverctl map -repeat normal Super+Alt          Return spawn "$TERMC"                     # kitty
 riverctl map -repeat normal Super+Alt               r spawn "$MENU"                      # MENU fuzzel 
 riverctl map -repeat normal Super+Alt               t spawn "$PASS"                      # PASS passwd mge tessen
-riverctl map -repeat normal Super+Alt               f spawn "$FILES"                     # FILES broot=>br
+riverctl map -repeat normal Super+Alt               f spawn "foot $FILES"                     # FILES broot=>br
 riverctl map -repeat normal Super+Alt               b spawn "$BROWSER"                   # BROWSER vieb
 riverctl map -repeat normal Super+Alt               m spawn "foot $MAIL"                 # MAIL neomutt
 riverctl map -repeat normal Super+Alt               i spawn "foot $EDITOR"               # EDITOR nvim
 riverctl map -repeat normal Super+Alt               s spawn "vieb $SEARX"                # Search engine
-riverctl map -repeat normal Super+Alt               l spawn "vieb $LOCALHOST"            # localhost
+riverctl map -repeat normal Super+Alt               z spawn "vieb $LOCALHOST"            # localhost
 #--------------------------
 #          SCRIPT
 #--------------------------
 
 
 # Mod+D to launch rofi
-riverctl map -repeat normal $mod D spawn "rofi -show run"
-riverctl map -repeat normal $mod+Shift D spawn "rofi -show drun"
-riverctl map -repeat normal $mod+Shift C spawn "rofi -show calc"
+riverctl map -repeat normal Shift+Control+Alt R spawn "rofi -show"
 
 # Bind useful Scripts
 #riverctl map -repeat normal $mod n spawn "foot nvim ~/vimwiki/index.md"
@@ -95,7 +95,7 @@ riverctl map passthrough Super F11 enter-mode normal                            
 #          CONFIGURATIONS
 #--------------------------
 riverctl map normal Super H send-layout-cmd rivertile "main-ratio -0.05"         # decrease main ratio of riverctl
-riverctl Gmap normal Super L send-layout-cmd rivertile "main-ratio +0.05"        # increase main ratio of riverctl
+riverctl map normal Super L send-layout-cmd rivertile "main-ratio +0.05"        # increase main ratio of riverctl
 riverctl map normal Super+Shift H send-layout-cmd rivertile "main-count +1"      # increase main count of rivertile
 riverctl map normal Super+Shift L send-layout-cmd rivertile "main-count -1"      # de increase main count of rivertile
 riverctl map normal Super+Alt H move left 100                                    # move view lift
