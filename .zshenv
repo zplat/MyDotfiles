@@ -27,9 +27,9 @@ if [ -e /home/phlight/.nix-profile/etc/profile.d/nix.sh ]; then . /home/phlight/
 
 # fcitx5
 #export GTK_IM_MODULE='fcitx'
-#exxport QT_IM_MODULE='fcitx'
-#exxport SDL_IM_MODULE='fcitx'
-#exxport XMODIFIERS='@im=fcitx'
+#export QT_IM_MODULE='fcitx'
+#export SDL_IM_MODULE='fcitx'
+#export XMODIFIERS='@im=fcitx'
 export QT_IM_MODULE=fcitx5
 export GTK_IM_MODULE=fcitx5
 export XMODIFIERS=@im=fcitx5
