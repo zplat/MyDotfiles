@@ -227,11 +227,11 @@
          shortcut: gl
          execution: ":focus ~/.local/share"
      }
-    # Shortcut bringing you to Storage2 directory
+    # Shortcut bringing you to Store directory
      {
-         invocation: Storage2
+         invocation: STORE
          shortcut: gs
-         execution: ":focus /run/media/phlight/Storage2/"
+         execution: ":focus /run/media/phlight/STORE/"
      }
     # Shortcut bringing you to Partition1 directory
      {

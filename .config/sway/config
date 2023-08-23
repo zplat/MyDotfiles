@@ -31,7 +31,7 @@ set $menu bemenu-run $menu_options | xargs swaymsg exec
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-set $DIR "/run/media/phlight/Storage2/Dropbox/Background/1K"
+set $DIR "$HOME/Dropbox/Background"
 set $FOLDER "6K"
 set $PICTURE \'sleepless-nights-4k-xn-3840x2160.jpg\'
 
