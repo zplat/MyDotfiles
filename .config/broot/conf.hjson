@@ -233,11 +233,11 @@
          shortcut: gs
          execution: ":focus /run/media/phlight/STORE/"
      }
-    # Shortcut bringing you to Partition1 directory
+    # Shortcut bringing you to Dropbox directory
      {
-         invocation: Partition1
+         invocation: Dropbox
          shortcut: gp
-         execution: ":focus /run/media/phlight/Partition1/"
+         execution: ":focus ~/Dropbox/"
      }
     # Here's an example of a shortcut bringing you to your home directory
      {
