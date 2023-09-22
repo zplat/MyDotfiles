@@ -10,7 +10,7 @@
 
 # Note: the "Super" modifier is also known as Logo, GUI, Windows, Mod4, etc.
 TERM=footclient
-TERMB="alacritty -o font.size=24"
+TERMB="alacritty -o font.size=18"
 TERMC=kitty
 FILES=br.sh
 BROWSER=vieb
@@ -37,8 +37,6 @@ riverctl spawn "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_
 riverctl spawn "udiskie"
 riverctl spawn "dropbox"
 riverctl spawn "mako"
-riverctl spawn "pipewire"
-riverctl spawn "wireplumber"
 riverctl spawn "foot --server"
 riverctl spawn "eww daemon"
 #riverctl spawn "fcitx5 -d -s 3"

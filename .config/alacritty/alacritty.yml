@@ -9,8 +9,10 @@
 # All imports must either be absolute paths starting with `/`, or paths relative
 # to the user's home directory starting with `~/`.
 import:
-  - ~/.config/alacritty/dracula.yml
+  #- ~/.config/alacritty/dracula.yml
+  - ~/.config/alacritty/themes/themes/carbonfox.yaml
   - ~/.config/alacritty/font.yml
+  - ~/.config/alacritty/window.yml
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
@@ -25,12 +27,3 @@ env:
   TERM: termguicolors
 # Configuration for Alacritty, the GPU enhanced terminal emulator
 
-
-window:
-  # Window dimensions (changes require restart)
-  #
-  # Specified in number of columns/lines, not pixels. If both are zero this
-  # setting is ignored.
-  dimensions:
-    columns: 100
-    lines: 50
