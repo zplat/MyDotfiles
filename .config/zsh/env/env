@@ -16,6 +16,8 @@ export OPENER="xdg-open"
 export PAGER="less"
 export BROWSER="vieb"
 export BROWSERCLI="lynx"
+export MAILDIR="$XDG_DATA_DIR/mai
+"
 export TERM="xterm-256color"
 #---------------------------------------------------------------------------------$
 #                                                          git repositories
@@ -31,6 +33,15 @@ export GPG_TTY=$(tty)                                      # Connect terinal to 
 #                                                          foot terminal
 
 export PATH="$PATH:$XDG_CONFIG_HOME/foot/foot.ini"	       
+
+#---------------------------------------------------------------------------------$
+#                                                          rubygem 
+export PATH="$PATH:$XDG_DATA_HOME/gem/ruby/3.0.0/bin"	       
+
+#---------------------------------------------------------------------------------$
+#                                                          Dropbox folder
+
+export DROPBOX_HOME="$HOME/Dropbox"	       
 #---------------------------------------------------------------------------------$
 #                                                          Less
 
@@ -69,9 +80,9 @@ export PASSWORD_STORE_ENABLE_EXTENSIONS=true               # Enable pass extensi
 export PASS_STORE_DIR="${HOME}/.password-store"            # Default
 export PASSWORD_STORE_GENERATED_LENGTH='64'                # Default
 #---------------------------------------------------------------------------------$
-#                                                          Zettel notes
+#                                                          Zettel notes ema
 
-export ZK_PATH="$STORAGE_HOME/Dropbox/Tutorial-Notes"     # Home 
+export ZK_PATH="$DROPBOX_HOME/Tutorial-Notes"     # Home 
 export ZK_NOTEBOOK_DIR="$ZK_PATH/zettelkasten"             # Notebook 
 #export PATH="$ZK_PATH/zk_script:$PATH" 		            # Home for auto scripts
 #---------------------------------------------------------------------------------$
@@ -114,7 +125,7 @@ alias srg='surfraw -browser=$BROWSER'                      # (GUI)
 #                                                          Media Storage 
 
 export EX_MEDIA="/run/media/$USER"                          # External Media 
-export STORAGE_HOME="$EX_MEDIA/Storage2"                   # Storage
+export STORAGE_HOME="$EX_MEDIA/STORE"                       # Storage
 
 #---------------------------------------------------------------------------------$
 #                                                          # searx setup

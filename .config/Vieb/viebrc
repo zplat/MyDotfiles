@@ -1,4 +1,5 @@
 " Options
+set useragent=%firefox
 set commandhist=useronly
 set downloadpath=~/Downloads/
 set timeoutlen=1000
@@ -13,6 +14,7 @@ set dialogprompt=show
 set guifontsize=16
 set mintabwidth=250
 set norestoretabs
+set clearhistoryinterval=3months
 " Security settings
 set clearcookiesonquit=true
 set permissioncamera=ask
@@ -35,7 +37,7 @@ set redirecttohttp
 
 " Screen layout
 set splitbelow
-set tabclosefocusright
+set tabclosefocus=right
 set tabreopenposition=previous
 
 " Spelling & language

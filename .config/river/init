@@ -87,6 +87,7 @@ riverctl map normal Super Return zoom                         # bump view->top o
 riverctl declare-mode passthrough                    # passthrough mode.
 riverctl map normal Super F11 enter-mode passthrough # enter passthrough mode
 riverctl map passthrough Super F11 enter-mode normal # return to normal mode
+
 #--------------------------
 #          CONFIGURATIONS
 #--------------------------
