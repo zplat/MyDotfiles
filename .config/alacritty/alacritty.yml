@@ -9,8 +9,15 @@
 # All imports must either be absolute paths starting with `/`, or paths relative
 # to the user's home directory starting with `~/`.
 import:
-  #- ~/.config/alacritty/dracula.yml
-  - ~/.config/alacritty/themes/themes/carbonfox.yaml
+  #- ~/.config/alacritty/themes/themes/carbonfox.yaml
+  #- ~/.config/alacritty/themes/themes/Cobalt2.yaml
+  #- ~/.config/alacritty/themes/themes/cyber_punk_neon.yaml
+  #- ~/.config/alacritty/themes/themes/dracula.yaml
+  #- ~/.config/alacritty/themes/themes/hyper.yaml
+  #- ~/.config/alacritty/themes/themes/marine_dark.yaml
+  #- ~/.config/alacritty/themes/themes/one_dark.yaml
+  #- ~/.config/alacritty/themes/themes/rainbow.yaml
+  - ~/.config/alacritty/themes/themes/seashells.yaml
   - ~/.config/alacritty/font.yml
   - ~/.config/alacritty/window.yml
 
