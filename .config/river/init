@@ -35,7 +35,6 @@ HYPER=Super+Shift+Alt+Control
 riverctl spawn "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river"
 riverctl spawn "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river"
 riverctl spawn "udiskie"
-riverctl spawn "dropbox"
 riverctl spawn "mako"
 riverctl spawn "foot --server"
 riverctl spawn "eww daemon"
