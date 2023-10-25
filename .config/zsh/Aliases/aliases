@@ -12,8 +12,6 @@ alias t='tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf'                             	#
 alias v="nvim"                                                                  # nvim
 alias sx="$XDG_CONFIG_HOME/sxiv/sxiv.sh"                                        # sxiv - open dir/file script
 alias PLAYLIST="$HOME/.local/bin/mpv-player.sh"                                 # mpv playlist in folder
-#										modern nvim
-alias mnv='XDG_DATA_HOME=$MODERN_NEOVIM/share XDG_CACHE_HOME=$MODERN_NEOVIM XDG_CONFIG_HOME=$MODERN_NEOVIM nvim'
 
 #----------------------------------------------------------------------------------------------------------@
 #                                                                               Emanote Zettelkasten
@@ -29,30 +27,30 @@ alias zi="zk edit -i"                                                           
 
 alias awesome="startx $XINITRC awesome" 			                            # awesomewm
 alias dwm="startx $XINITRC dwm"                               				    # dwm
-alias River="$XDG_CONFIG_HOME/river/nile.sh"                               		# river
 #----------------------------------------------------------------------------------------------------------@
-                                                                                # Web Tools
-                                                                                
+#                                                                               Web Tools
+
 alias b="buku"                                                                  # buku bookmarks
 #----------------------------------------------------------------------------------------------------------@
 #                                                                               OS Cmds
-                                                                                
+
 alias shut='shutdown -h now'                                                    # shutdown
 #----------------------------------------------------------------------------------------------------------@
 #                                                                               Git
-                                                                                
+
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME' 	    # alias to the dotfiles
 alias secula='/usr/bin/git --git-dir=$HOME/.secfiles/ --work-tree=$HOME' 	    # alias to private dotfiles
 #----------------------------------------------------------------------------------------------------------@
 #                                                                               mail
-                                                                                
+
 alias mbsync="mbsync -c \"$XDG_CONFIG_HOME/isync/mbsyncrc\""                    # mbsync
 #----------------------------------------------------------------------------------------------------------@
 #                                                                               qmk
-                                                                                
+
 alias flash_9="qmk flash -kb ferris/sweep -km ferris9 -bl dfu"                  # flash ferris9
+alias compile_9="qmk compile -kb ferris/sweep -km ferris9 "                  # flash ferris9
 #----------------------------------------------------------------------------------------------------------@
 #                                                                               qmk
-                                                                                
+
 alias kytty="$HOME/.local/repositories/kitty/kitty/launcher/kitty"             # kitty terminal
 #----------------------------------------------------------------------------------------------------------@
